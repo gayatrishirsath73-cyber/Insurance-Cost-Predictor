@@ -1,0 +1,8 @@
+venv/
+venv311/
+__pycache__/
+*.py[cod]
+.env
+.streamlit/secrets.toml
+
+artifacts/models/regression_rf_model.joblib
