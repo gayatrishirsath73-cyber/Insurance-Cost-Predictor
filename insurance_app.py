@@ -23,11 +23,17 @@ st.write(
 # ============================================================
 # 1. LOAD MODEL ARTIFACT
 # ============================================================
+from huggingface_hub import hf_hub_download
 
-artifact = joblib.load(
-    "artifacts/models/regression_rf_model.joblib"
+model_path = hf_hub_download(
+    repo_id="Gayatri-Shirsath02/insurance-cost-predictor-model",
+    filename="regression_rf_model.joblib",
+    repo_type="model"
 )
 
+artifact = joblib.load(model_path)
+model = artifact["model"]
+model_features = artifact["features"]
 model = artifact["model"]
 model_features = artifact["features"]
 
